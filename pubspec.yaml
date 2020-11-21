@@ -25,7 +25,10 @@ dependencies:
     sdk: flutter
   simple_splashscreen:
   flutter_svg: 
-
+  curved_navigation_bar: 
+  simple_animations: 
+  http: 
+  url_launcher: 
 
 
   # The following adds the Cupertino Icons font to your application.

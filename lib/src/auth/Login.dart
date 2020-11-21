@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 //---- Screens
 import 'package:github/src/auth/Cadastro.dart';
+import 'package:github/src/pages/Nav.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -110,9 +111,13 @@ class _LoginState extends State<Login> {
                     onPressed: () async {
                       if (_emailController.text != "" &&
                           _passwordController.text != "") {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => Nav()),
+                            (route) => false);
                         print("ok");
                       } else {
-                        snackBar("Inválido");
+                        snackBar("Usuário não encontrado");
                       }
                     },
                     child: Text("Sign In"),
