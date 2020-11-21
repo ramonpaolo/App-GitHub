@@ -1,6 +1,7 @@
 //---- Packages
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:github/env.dart';
 import 'package:http/http.dart' as http;
 
 //---- Animation
@@ -15,9 +16,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   Future getData() async {
     String url = "https://api.github.com/users/ramonpaolo";
-
     http.Response a = await http.get(url, headers: {
-      "access-token": "47f60ffc40144c516e47f770ad2cab385859016b",
+      "access-token": await data["oauth"],
       "Accept": "application/json"
     });
     print(a.body);
